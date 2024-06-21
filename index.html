@@ -6,6 +6,54 @@
     <title>To Do List </title>
 </head>
 <body>
-    
+    <main>
+        <section class="novoItemEntry">
+            <form action="itemEntryForm">
+                <label for="novoItem">Insira um item novo</label>
+                <input 
+                id="novoItem" 
+                type="text" 
+                size="40" 
+                autocomplete="off" 
+                placeholder="Add Item" 
+                tabindex="0"
+                />
+                <button 
+                id="addItem" 
+                class="button" 
+                title="Add novo item"
+                aria-label="Add novo item a lista"
+                tabindex="0"
+                >+</button>
+            </form>
+        </section>
+        <section class="listContainer">
+            <div class="listTitle">
+                <h1>Lista de Tarefas</h1>
+                <button 
+                id="clearItems" 
+                class="button"
+                title="limpar lista de tarefas"
+                aria-label="remova todos os itens da lista"
+                tabindex="0">Limpar</button>
+            </div>
+            <hr />
+            <div id="listItens">
+                <div class="item">
+                    <input 
+                    type="checkbox" 
+                    id="1"
+                    tabindex="0">
+                    <label for="1">comer</label>
+                </div>
+                <input 
+                type="checkbox" 
+                id="2"
+                tabindex="0">
+                <label for="2">dormir</label>
+            </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
