@@ -8,3 +8,35 @@ $containerbordercolor: #000;
         @content;
     }
 }
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: 0;
+    
+}
+
+html,body{
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: $default-font-color;
+    width: 100%;
+    min-height: 100%;
+    @include mp(768px){
+        font-size: 22px;
+    }
+}
+
+body{
+    padding: 20px;
+    background-color: $background-color;
+}
+
+section{
+    background-color: $containerbordercolor;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    border: 1px solid $containerbordercolor;
+    border-radius: 10px;
+}
