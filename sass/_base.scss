@@ -3,8 +3,8 @@ $background-color: #4a90e2;
 $containerbordercolor: #000;
 
 
-@mixin mp($sie){
-    @media only screen and (min-width: $sie){
+@mixin mp($size){
+    @media only screen and (min-width: $size){
         @content;
     }
 }
