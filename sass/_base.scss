@@ -1,0 +1,10 @@
+$default-font-color: #000;
+$background-color: #4a90e2;
+$containerbordercolor: #000;
+
+
+@mixin mp($sie){
+    @media only screen and (min-width: $sie){
+        @content;
+    }
+}
