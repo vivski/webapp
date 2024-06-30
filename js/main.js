@@ -8,3 +8,12 @@ document.addEventListener("readystatechange", (event) => {
         initApp();
     }
 })
+
+const initApp = () =>{
+    refreshThePage();
+}
+const refresh =()=>{
+  clearListDisplay();
+  //renderList();
+  // clearItemEntryField();
+}
