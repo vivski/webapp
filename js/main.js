@@ -14,6 +14,5 @@ const initApp = () =>{
 }
 const refresh =()=>{
   clearListDisplay();
-  //renderList();
-  // clearItemEntryField();
+
 }
