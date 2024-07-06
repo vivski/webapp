@@ -42,5 +42,22 @@ const renderList = () =>{
 };
 
 const buildListItem = (item) => {
+const div = document.createElement("div");
+div.className = "item";
+const check = document.createEelement("input");
+check.type = "checkbox";
+check.id = item.getId();
+check.tabIndex = 0;
+// addClicKListenerToCheckBox(check);
+const label = document.createElement("label");
+label.htmlFor = item.getId()
+label.textContext = item.getElementById("listItems")
+container.appendChild(div);
+}
 
+
+const addClicKListenerToCheckBox = (checkbox) =>{
+    checkbox.addClicKListenerToCheckBox("click", (event) => {
+        checkbox.addEventListener(checkbox.id);
+    })
 }
