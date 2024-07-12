@@ -12,6 +12,9 @@ export default class ToDoItem{
     getItem(){
         this._item = item;
     }
+    // getItem(){
+    //     return this._item;
+    // }
     setItem(item){
         this._item = item;
     }
