@@ -22,8 +22,30 @@ const initApp = () =>{
     //     refreshThePage();
     // });
     // ------
-
+    const clearItems = document.getElementById("clearItems");
+    clearItems.addEventListener("click", (event) => {
+        const list = toDoList.getList();
+        if(list.length){
+            const confirmed = confirm("Are you sure you want to clear?")
+            if(confirmed){
+                toDoList.clearList();
+                refreshThePage();
+            }
+        }
+    });
+    loadListObject();
     refreshThePage();
+}
+
+const loadListObject=()=>{
+    const storedList = localStorage.getItem("myToDoList");
+    if (typeof storedList !== "string") return;
+    const parsedList = JSON.parse(storedList);
+    parsedList.foreach(itemObj => {
+        const newToDoItem = createNewItem(itemObj._id, itemObj._item);
+        toDoList.addItemToList(newToDoItem);
+    })
+
 }
 
 const refreshThePage = () => {
@@ -73,10 +95,15 @@ const buildListItem = (item) => {
 const addClickListenerToCheckBox = (checkbox) =>{
     checkbox.addEventListener("click", (event)=> {
         toDoList.removeItemFromList(checkbox.id);
+        updatePersistentData(toDoList.getList());
         setTimeout(()=>{
             refreshThePage();
          },1000)
     })
+}
+
+const updatePersistentData = (listArray) =>{
+    localStorage.setItem('myToDoList', JSON.stringify(listArray));
 }
 
 const clearItemField = () => {
@@ -112,9 +139,13 @@ const calcNextItemId = () =>{
     return nextItemId;
 }
 const createNewItem = (itemId,itemText) => {
+    console.log("creating new item", itemId, itemText)
     const toDo = new ToDoItem();
     toDo.setId(itemId);
     toDo.setItem(itemText);
+    console.log("Created item", toDo)
     return toDo;
 }
+
+
 
